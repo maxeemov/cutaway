@@ -12,6 +12,7 @@ class AdminController extends Controller
   protected $name;
   protected $login;
   protected $id;
+  
   public function __construct(Request $result){
     //$this->middleware('auth');
     $this->email=$result->email;
@@ -19,22 +20,24 @@ class AdminController extends Controller
     $this->login=$result->login;
     $this->id=$result->id;
   }
-   public function index(){
-    return view('admin');
+  
+   public function index(Request $request, $site=''){
+    return view($site);
    } 
   
   public function select(){
-    $result = User::all();
+    $result = User::findOrFail($this->id);
     dump($result);
   }
   
   public function update(){
     $result=User::findOrFail($this->id)->update(['name'=>$this->name, 'login'=>$this->login,'email'=>$this->email]);
-    echo'данные изменены успешно!';
+    //flash('Data is change!');
     return view('home');
   }
   public function delete(){
-    $result=User::withTrashed()->where('email',$this->email);
+    $result=User::findOrFail($this->id)->delete();
+    
   }
   
   public function restore(){

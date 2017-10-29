@@ -27,8 +27,15 @@ Route::get('/', function () {
 */
 
   Route::group(['prefix'=>'admin', 'middleware'=>['web','auth']],function(){
-  Route::get('/', ['uses'=>'AdminController@index','as'=>'adminIndex']);
+    
+  Route::get('/{site?}', ['uses'=>'AdminController@index','as'=>'adminIndex']);
+    
+  Route::post('/select', ['uses'=>'AdminController@select','as'=>'adminSelect']);
   Route::post('/update', ['uses'=>'AdminController@update','as'=>'adminUpdate']);
+  Route::post('/softdelete',['uses'=>'AdminController@delete','as'=>'adminDelete']);
+ // Route::post('/accaunt',['uses'=>'AdminController@select','as'=>'adminAccaunt']);
+  
+  
   
 });
 
