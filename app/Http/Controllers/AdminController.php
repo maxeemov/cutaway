@@ -29,8 +29,9 @@ class AdminController extends Controller
   }
   
   public function update(){
-    dump($this->id);
-    //$result=User::findOrFail($this->id)->update(['name'=>$this->name, 'login'=>$this->login]);
+    $result=User::findOrFail($this->id)->update(['name'=>$this->name, 'login'=>$this->login,'email'=>$this->email]);
+    echo'данные изменены успешно!';
+    return view('home');
   }
   public function delete(){
     $result=User::withTrashed()->where('email',$this->email);

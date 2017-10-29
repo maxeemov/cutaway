@@ -8,7 +8,8 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                  <a class="btn btn-success" href="{{ action('AdminController@index') }} " >ChangeInfo</a>
+ 
                 </div>
             </div>
         </div>
