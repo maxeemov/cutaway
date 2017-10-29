@@ -33,7 +33,7 @@ Route::get('/', function () {
   Route::post('/select', ['uses'=>'AdminController@select','as'=>'adminSelect']);
   Route::post('/update', ['uses'=>'AdminController@update','as'=>'adminUpdate']);
   Route::post('/softdelete',['uses'=>'AdminController@delete','as'=>'adminDelete']);
- // Route::post('/accaunt',['uses'=>'AdminController@select','as'=>'adminAccaunt']);
+  Route::post('/accaunt',['uses'=>'AdminController@select','as'=>'adminAccaunt']);
   
   
   

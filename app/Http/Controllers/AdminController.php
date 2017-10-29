@@ -27,11 +27,14 @@ class AdminController extends Controller
   
   public function select(){
     $result = User::findOrFail($this->id);
+    //flash('Data is change!');
     dump($result);
+     return view('home');
   }
   
   public function update(){
     $result=User::findOrFail($this->id)->update(['name'=>$this->name, 'login'=>$this->login,'email'=>$this->email]);
+     dump($result);
     //flash('Data is change!');
     return view('home');
   }

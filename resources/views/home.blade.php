@@ -8,9 +8,9 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                  <a class="btn btn-success" href="{{ action('AdminController@index',['site'=>'change']) }} " >ChangeInfo</a>
-                  <a class="btn btn-success" href="{{ action('AdminController@index',['site'=>'delete'])}} " >DeleteAccount</a>
- 
+                  <a class="btn btn-success" href="{{ action('AdminController@index',['site'=>'change']) }} " >Change Info</a>
+                  <a class="btn btn-success" href="{{ action('AdminController@index',['site'=>'delete'])}} " >Delete Account</a>
+                  <a class="btn btn-success" href="{{ action('AdminController@index',['site'=>'accaunt'])}} " >About Me</a>
                 </div>
             </div>
         </div>
